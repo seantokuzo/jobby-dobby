@@ -186,9 +186,9 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
 ```js
 <nav>
-  <Link to='/'>Dashboard</Link>
-  <Link to='/register'>Register</Link>
-  <Link to='/landing'>Home</Link>
+  <Link to="/">Dashboard</Link>
+  <Link to="/register">Register</Link>
+  <Link to="/landing">Home</Link>
 </nav>
 ```
 
@@ -198,7 +198,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 return (
-  <Link to='/register' className='btn btn-hero'>
+  <Link to="/register" className="btn btn-hero">
     Login / Register
   </Link>
 )
@@ -224,12 +224,12 @@ import img from '../assets/images/not-found.svg'
 import Wrapper from '../assets/wrappers/ErrorPage'
 
 return (
-  <Wrapper className='full-page'>
+  <Wrapper className="full-page">
     <div>
-      <img src={img} alt='not found' />
+      <img src={img} alt="not found" />
       <h3>text</h3>
       <p>text</p>
-      <Link to='/'>back home</Link>
+      <Link to="/">back home</Link>
     </div>
   </Wrapper>
 )
@@ -258,7 +258,7 @@ const initialState = {
   name: '',
   email: '',
   password: '',
-  isMember: true,
+  isMember: true
 }
 // if possible prefer local state
 // global state
@@ -277,27 +277,27 @@ function Register() {
     console.log(e.target)
   }
   return (
-    <Wrapper className='full-page'>
-      <form className='form' onSubmit={onSubmit}>
+    <Wrapper className="full-page">
+      <form className="form" onSubmit={onSubmit}>
         <Logo />
         <h3>Login</h3>
 
         {/* name field */}
-        <div className='form-row'>
-          <label htmlFor='name' className='form-label'>
+        <div className="form-row">
+          <label htmlFor="name" className="form-label">
             name
           </label>
 
           <input
-            type='text'
+            type="text"
             value={values.name}
-            name='name'
+            name="name"
             onChange={handleChange}
-            className='form-input'
+            className="form-input"
           />
         </div>
 
-        <button type='submit' className='btn btn-block'>
+        <button type="submit" className="btn btn-block">
           submit
         </button>
       </form>
@@ -316,8 +316,8 @@ function Register() {
 ```js
 const FormRow = ({ type, name, value, handleChange, labelText }) => {
   return (
-    <div className='form-row'>
-      <label htmlFor={name} className='form-label'>
+    <div className="form-row">
+      <label htmlFor={name} className="form-label">
         {labelText || name}
       </label>
 
@@ -326,7 +326,7 @@ const FormRow = ({ type, name, value, handleChange, labelText }) => {
         value={value}
         name={name}
         onChange={handleChange}
-        className='form-input'
+        className="form-input"
       />
     </div>
   )
@@ -342,7 +342,7 @@ export default FormRow
 
 ```js
 const Alert = () => {
-  return <div className='alert alert-danger'>alert goes here</div>
+  return <div className="alert alert-danger">alert goes here</div>
 }
 
 export default Alert
@@ -375,8 +375,8 @@ return (
 
     {!values.isMember && (
       <FormRow
-        type='text'
-        name='name'
+        type="text"
+        name="name"
         value={values.name}
         handleChange={handleChange}
       />
@@ -388,7 +388,7 @@ return (
     <p>
       {values.isMember ? 'Not a member yet?' : 'Already a member?'}
 
-      <button type='button' onClick={toggleMember} className='member-btn'>
+      <button type="button" onClick={toggleMember} className="member-btn">
         {values.isMember ? 'Register' : 'Login'}
       </button>
     </p>
@@ -410,7 +410,7 @@ export const initialState = {
   isLoading: false,
   showAlert: false,
   alertText: '',
-  alertType: '',
+  alertType: ''
 }
 const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
@@ -419,7 +419,7 @@ const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
-        ...state,
+        ...state
       }}
     >
       {children}
@@ -511,7 +511,7 @@ if (action.type === DISPLAY_ALERT) {
     ...state,
     showAlert: true,
     alertType: 'danger',
-    alertText: 'Please provide all values!',
+    alertText: 'Please provide all values!'
   }
 }
 ```
@@ -575,7 +575,7 @@ if (action.type === CLEAR_ALERT) {
     ...state,
     showAlert: false,
     alertType: '',
-    alertText: '',
+    alertText: ''
   }
 }
 ```
@@ -585,7 +585,7 @@ appContext.js
 
 const displayAlert = () => {
   dispatch({
-    type: DISPLAY_ALERT,
+    type: DISPLAY_ALERT
   })
   clearAlert()
 }
@@ -593,7 +593,7 @@ const displayAlert = () => {
 const clearAlert = () => {
   setTimeout(() => {
     dispatch({
-      type: CLEAR_ALERT,
+      type: CLEAR_ALERT
     })
   }, 3000)
 }
@@ -859,9 +859,9 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
 ```js
 <nav>
-  <Link to='/'>Dashboard</Link>
-  <Link to='/register'>Register</Link>
-  <Link to='/landing'>Home</Link>
+  <Link to="/">Dashboard</Link>
+  <Link to="/register">Register</Link>
+  <Link to="/landing">Home</Link>
 </nav>
 ```
 
@@ -871,7 +871,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 return (
-  <Link to='/register' className='btn btn-hero'>
+  <Link to="/register" className="btn btn-hero">
     Login / Register
   </Link>
 )
@@ -897,12 +897,12 @@ import img from '../assets/images/not-found.svg'
 import Wrapper from '../assets/wrappers/ErrorPage'
 
 return (
-  <Wrapper className='full-page'>
+  <Wrapper className="full-page">
     <div>
-      <img src={img} alt='not found' />
+      <img src={img} alt="not found" />
       <h3>text</h3>
       <p>text</p>
-      <Link to='/'>back home</Link>
+      <Link to="/">back home</Link>
     </div>
   </Wrapper>
 )
@@ -931,7 +931,7 @@ const initialState = {
   name: '',
   email: '',
   password: '',
-  isMember: true,
+  isMember: true
 }
 // if possible prefer local state
 // global state
@@ -950,27 +950,27 @@ function Register() {
     console.log(e.target)
   }
   return (
-    <Wrapper className='full-page'>
-      <form className='form' onSubmit={onSubmit}>
+    <Wrapper className="full-page">
+      <form className="form" onSubmit={onSubmit}>
         <Logo />
         <h3>Login</h3>
 
         {/* name field */}
-        <div className='form-row'>
-          <label htmlFor='name' className='form-label'>
+        <div className="form-row">
+          <label htmlFor="name" className="form-label">
             name
           </label>
 
           <input
-            type='text'
+            type="text"
             value={values.name}
-            name='name'
+            name="name"
             onChange={handleChange}
-            className='form-input'
+            className="form-input"
           />
         </div>
 
-        <button type='submit' className='btn btn-block'>
+        <button type="submit" className="btn btn-block">
           submit
         </button>
       </form>
@@ -989,8 +989,8 @@ function Register() {
 ```js
 const FormRow = ({ type, name, value, handleChange, labelText }) => {
   return (
-    <div className='form-row'>
-      <label htmlFor={name} className='form-label'>
+    <div className="form-row">
+      <label htmlFor={name} className="form-label">
         {labelText || name}
       </label>
 
@@ -999,7 +999,7 @@ const FormRow = ({ type, name, value, handleChange, labelText }) => {
         value={value}
         name={name}
         onChange={handleChange}
-        className='form-input'
+        className="form-input"
       />
     </div>
   )
@@ -1015,7 +1015,7 @@ export default FormRow
 
 ```js
 const Alert = () => {
-  return <div className='alert alert-danger'>alert goes here</div>
+  return <div className="alert alert-danger">alert goes here</div>
 }
 
 export default Alert
@@ -1048,8 +1048,8 @@ return (
 
     {!values.isMember && (
       <FormRow
-        type='text'
-        name='name'
+        type="text"
+        name="name"
         value={values.name}
         handleChange={handleChange}
       />
@@ -1061,7 +1061,7 @@ return (
     <p>
       {values.isMember ? 'Not a member yet?' : 'Already a member?'}
 
-      <button type='button' onClick={toggleMember} className='member-btn'>
+      <button type="button" onClick={toggleMember} className="member-btn">
         {values.isMember ? 'Register' : 'Login'}
       </button>
     </p>
@@ -1083,7 +1083,7 @@ export const initialState = {
   isLoading: false,
   showAlert: false,
   alertText: '',
-  alertType: '',
+  alertType: ''
 }
 const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
@@ -1092,7 +1092,7 @@ const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
-        ...state,
+        ...state
       }}
     >
       {children}
@@ -1184,7 +1184,7 @@ if (action.type === DISPLAY_ALERT) {
     ...state,
     showAlert: true,
     alertType: 'danger',
-    alertText: 'Please provide all values!',
+    alertText: 'Please provide all values!'
   }
 }
 ```
@@ -1248,7 +1248,7 @@ if (action.type === CLEAR_ALERT) {
     ...state,
     showAlert: false,
     alertType: '',
-    alertText: '',
+    alertText: ''
   }
 }
 ```
@@ -1258,7 +1258,7 @@ appContext.js
 
 const displayAlert = () => {
   dispatch({
-    type: DISPLAY_ALERT,
+    type: DISPLAY_ALERT
   })
   clearAlert()
 }
@@ -1266,7 +1266,7 @@ const displayAlert = () => {
 const clearAlert = () => {
   setTimeout(() => {
     dispatch({
-      type: CLEAR_ALERT,
+      type: CLEAR_ALERT
     })
   }, 3000)
 }
@@ -1599,7 +1599,7 @@ return jwt.sign({ userId: this._id }, 'jwtSecret', { expiresIn: '1d' })
 
 ```js
 return jwt.sign({ userId: this._id }, process.env.JWT_SECRET, {
-  expiresIn: process.env.JWT_LIFETIME,
+  expiresIn: process.env.JWT_LIFETIME
 })
 ```
 
@@ -1681,7 +1681,7 @@ appContext.js
 const initialState = {
   user: null,
   token: null,
-  userLocation: '',
+  userLocation: ''
 }
 ```
 
@@ -1708,7 +1708,7 @@ if (isMember) {
 }
 
 return (
-  <button type='submit' className='btn btn-block' disabled={isLoading}>
+  <button type="submit" className="btn btn-block" disabled={isLoading}>
     submit
   </button>
 )
@@ -1745,8 +1745,8 @@ const registerUser = async (currentUser) => {
       payload: {
         user,
         token,
-        location,
-      },
+        location
+      }
     })
 
     // will add later
@@ -1759,7 +1759,7 @@ const registerUser = async (currentUser) => {
     console.log(error.response)
     dispatch({
       type: REGISTER_USER_ERROR,
-      payload: { msg: error.response.data.msg },
+      payload: { msg: error.response.data.msg }
     })
   }
   clearAlert()
@@ -1781,7 +1781,7 @@ if (action.type === REGISTER_USER_SUCCESS) {
     isLoading: false,
     showAlert: true,
     alertType: 'success',
-    alertText: 'User Created! Redirecting...',
+    alertText: 'User Created! Redirecting...'
   }
 }
 if (action.type === REGISTER_USER_ERROR) {
@@ -1790,7 +1790,7 @@ if (action.type === REGISTER_USER_ERROR) {
     isLoading: false,
     showAlert: true,
     alertType: 'danger',
-    alertText: action.payload.msg,
+    alertText: action.payload.msg
   }
 }
 ```
@@ -1837,7 +1837,7 @@ const registerUser = async (currentUser) => {
   addUserToLocalStorage({
     user,
     token,
-    location,
+    location
   })
 }
 
@@ -1850,7 +1850,7 @@ const initialState = {
   user: user ? JSON.parse(user) : null,
   token: token,
   userLocation: userLocation || '',
-  jobLocation: userLocation || '',
+  jobLocation: userLocation || ''
 }
 ```
 
@@ -1959,14 +1959,14 @@ const loginUser = async (currentUser) => {
 
     dispatch({
       type: LOGIN_USER_SUCCESS,
-      payload: { user, token, location },
+      payload: { user, token, location }
     })
 
     addUserToLocalStorage({ user, token, location })
   } catch (error) {
     dispatch({
       type: LOGIN_USER_ERROR,
-      payload: { msg: error.response.data.msg },
+      payload: { msg: error.response.data.msg }
     })
   }
   clearAlert()
@@ -1979,7 +1979,7 @@ reducer.js
 if (action.type === LOGIN_USER_BEGIN) {
   return {
     ...state,
-    isLoading: true,
+    isLoading: true
   }
 }
 if (action.type === LOGIN_USER_SUCCESS) {
@@ -1992,7 +1992,7 @@ if (action.type === LOGIN_USER_SUCCESS) {
     jobLocation: action.payload.location,
     showAlert: true,
     alertType: 'success',
-    alertText: 'Login Successful! Redirecting...',
+    alertText: 'Login Successful! Redirecting...'
   }
 }
 if (action.type === LOGIN_USER_ERROR) {
@@ -2001,7 +2001,7 @@ if (action.type === LOGIN_USER_ERROR) {
     isLoading: false,
     showAlert: true,
     alertType: 'danger',
-    alertText: action.payload.msg,
+    alertText: action.payload.msg
   }
 }
 ```
@@ -2026,13 +2026,13 @@ const setupUser = async ({ currentUser, endPoint, alertText }) => {
     const { user, token, location } = data
     dispatch({
       type: SETUP_USER_SUCCESS,
-      payload: { user, token, location, alertText },
+      payload: { user, token, location, alertText }
     })
     addUserToLocalStorage({ user, token, location })
   } catch (error) {
     dispatch({
       type: SETUP_USER_ERROR,
-      payload: { msg: error.response.data.msg },
+      payload: { msg: error.response.data.msg }
     })
   }
   clearAlert()
@@ -2054,7 +2054,7 @@ if (action.type === SETUP_USER_SUCCESS) {
     jobLocation: action.payload.location,
     showAlert: true,
     alertType: 'success',
-    alertText: action.payload.alertText,
+    alertText: action.payload.alertText
   }
 }
 if (action.type === SETUP_USER_ERROR) {
@@ -2063,7 +2063,7 @@ if (action.type === SETUP_USER_ERROR) {
     isLoading: false,
     showAlert: true,
     alertType: 'danger',
-    alertText: action.payload.msg,
+    alertText: action.payload.msg
   }
 }
 ```
@@ -2085,13 +2085,13 @@ const onSubmit = (e) => {
     setupUser({
       currentUser,
       endPoint: 'login',
-      alertText: 'Login Successful! Redirecting...',
+      alertText: 'Login Successful! Redirecting...'
     })
   } else {
     setupUser({
       currentUser,
       endPoint: 'register',
-      alertText: 'User Created! Redirecting...',
+      alertText: 'User Created! Redirecting...'
     })
   }
 }
@@ -2106,7 +2106,7 @@ const onSubmit = (e) => {
 - replace in home route
 
 ```js
-<Route path='/' element={<div>dashboard</div>} />
+<Route path="/" element={<div>dashboard</div>} />
 ```
 
 - create <b>dashboard</b> directory in pages
@@ -2151,8 +2151,8 @@ const SharedLayout = () => {
   return (
     <Wrapper>
       <nav>
-        <Link to='all-jobs'>all jobs</Link>
-        <Link to='add-job'>all jobs</Link>
+        <Link to="all-jobs">all jobs</Link>
+        <Link to="add-job">all jobs</Link>
       </nav>
       <Outlet />
     </Wrapper>
@@ -2176,7 +2176,7 @@ App.js
 
 ```js
 <Route
-  path='/'
+  path="/"
   element={
     <ProtectedRoute>
       <SharedLayout />
@@ -2194,7 +2194,7 @@ import { useAppContext } from '../context/appContext'
 const ProtectedRoute = ({ children }) => {
   const { user } = useAppContext()
   if (!user) {
-    return <Navigate to='/landing' />
+    return <Navigate to="/landing" />
   }
   return children
 }
@@ -2219,12 +2219,12 @@ const SharedLayout = () => {
   return (
     <>
       <Wrapper>
-        <main className='dashboard'>
+        <main className="dashboard">
           <SmallSidebar />
           <BigSidebar />
           <div>
             <Navbar />
-            <div className='dashboard-page'>
+            <div className="dashboard-page">
               <Outlet />
             </div>
           </div>
@@ -2276,9 +2276,9 @@ import Wrapper from '../assets/wrappers/Navbar'
 const Navbar = () => {
   return (
     <Wrapper>
-      <div className='nav-center'>
+      <div className="nav-center">
         <button
-          className='toggle-btn'
+          className="toggle-btn"
           onClick={() => console.log('toggle sidebar')}
         >
           <FaAlignLeft />
@@ -2286,19 +2286,19 @@ const Navbar = () => {
 
         <div>
           <Logo />
-          <h3 className='logo-text'>dashboard</h3>
+          <h3 className="logo-text">dashboard</h3>
         </div>
 
-        <div className='btn-container'>
-          <button className='btn' onClick={() => console.log('show logout')}>
+        <div className="btn-container">
+          <button className="btn" onClick={() => console.log('show logout')}>
             <FaUserCircle />
             john
             <FaCaretDown />
           </button>
-          <div className='dropdown show-dropdown'>
+          <div className="dropdown show-dropdown">
             <button
               onClick={() => console.log('logout user')}
-              className='dropdown-btn'
+              className="dropdown-btn"
             >
               logout
             </button>
@@ -2326,7 +2326,7 @@ export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR'
 appContext.js
 
 const initialState = {
-  showSidebar: false,
+  showSidebar: false
 }
 
 const toggleSidebar = () => {
@@ -2348,7 +2348,7 @@ Navbar.js
 const { toggleSidebar } = useAppContext()
 
 return (
-  <button className='toggle-btn' onClick={toggleSidebar}>
+  <button className="toggle-btn" onClick={toggleSidebar}>
     <FaAlignLeft />
   </button>
 )
@@ -2408,7 +2408,7 @@ if (action.type === LOGOUT_USER) {
     user: null,
     token: null,
     userLocation: '',
-    jobLocation: '',
+    jobLocation: ''
   }
 }
 ```
@@ -2419,8 +2419,8 @@ Navbar.js
 const { user, logoutUser, toggleSidebar } = useAppContext()
 
 return (
-  <div className='btn-container'>
-    <button className='btn' onClick={() => setShowLogout(!showLogout)}>
+  <div className="btn-container">
+    <button className="btn" onClick={() => setShowLogout(!showLogout)}>
       <FaUserCircle />
       {user.name}
       {user && user.name}
@@ -2428,7 +2428,7 @@ return (
       <FaCaretDown />
     </button>
     <div className={showLogout ? 'dropdown show-dropdown' : 'dropdown'}>
-      <button onClick={logoutUser} className='dropdown-btn'>
+      <button onClick={logoutUser} className="dropdown-btn">
         logout
       </button>
     </div>
@@ -2452,26 +2452,26 @@ const links = [
     id: 1,
     text: 'stats',
     path: '/',
-    icon: <IoBarChartSharp />,
+    icon: <IoBarChartSharp />
   },
   {
     id: 2,
     text: 'all jobs',
     path: 'all-jobs',
-    icon: <MdQueryStats />,
+    icon: <MdQueryStats />
   },
   {
     id: 3,
     text: 'add job',
     path: 'add-job',
-    icon: <FaWpforms />,
+    icon: <FaWpforms />
   },
   {
     id: 4,
     text: 'profile',
     path: 'profile',
-    icon: <ImProfile />,
-  },
+    icon: <ImProfile />
+  }
 ]
 
 export default links
@@ -2492,15 +2492,15 @@ import Logo from './Logo'
 export const SmallSidebar = () => {
   return (
     <Wrapper>
-      <div className='sidebar-container show-sidebar'>
-        <div className='content'>
-          <button className='close-btn' onClick={() => console.log('toggle')}>
+      <div className="sidebar-container show-sidebar">
+        <div className="content">
+          <button className="close-btn" onClick={() => console.log('toggle')}>
             <FaTimes />
           </button>
           <header>
             <Logo />
           </header>
-          <div className='nav-links'>nav links</div>
+          <div className="nav-links">nav links</div>
         </div>
       </div>
     </Wrapper>
@@ -2534,7 +2534,7 @@ return (
 SmallSidebar.js
 
 return (
-  <button className='close-btn' onClick={toggleSidebar}>
+  <button className="close-btn" onClick={toggleSidebar}>
     <FaTimes />
   </button>
 )
@@ -2548,7 +2548,7 @@ SmallSidebar.js
 import { NavLink } from 'react-router-dom'
 
 return (
-  <div className='nav-links'>
+  <div className="nav-links">
     {links.map((link) => {
       const { text, path, id, icon } = link
 
@@ -2561,7 +2561,7 @@ return (
           key={id}
           onClick={toggleSidebar}
         >
-          <span className='icon'>{icon}</span>
+          <span className="icon">{icon}</span>
           {text}
         </NavLink>
       )
@@ -2582,7 +2582,7 @@ import links from '../utils/links'
 
 const NavLinks = ({ toggleSidebar }) => {
   return (
-    <div className='nav-links'>
+    <div className="nav-links">
       {links.map((link) => {
         const { text, path, id, icon } = link
 
@@ -2595,7 +2595,7 @@ const NavLinks = ({ toggleSidebar }) => {
               isActive ? 'nav-link active' : 'nav-link'
             }
           >
-            <span className='icon'>{icon}</span>
+            <span className="icon">{icon}</span>
             {text}
           </NavLink>
         )
@@ -2632,7 +2632,7 @@ const BigSidebar = () => {
           showSidebar ? 'sidebar-container ' : 'sidebar-container show-sidebar'
         }
       >
-        <div className='content'>
+        <div className="content">
           <header>
             <Logo />
           </header>
@@ -2802,7 +2802,7 @@ const updateUser = async (req, res) => {
   res.status(StatusCodes.OK).json({
     user,
     token,
-    location: user.location,
+    location: user.location
   })
 }
 ```
@@ -2864,39 +2864,39 @@ const Profile = () => {
   }
   return (
     <Wrapper>
-      <form className='form' onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <h3>profile </h3>
         {showAlert && <Alert />}
 
         {/* name */}
-        <div className='form-center'>
+        <div className="form-center">
           <FormRow
-            type='text'
-            name='name'
+            type="text"
+            name="name"
             value={name}
             handleChange={(e) => setName(e.target.value)}
           />
           <FormRow
-            labelText='last name'
-            type='text'
-            name='lastName'
+            labelText="last name"
+            type="text"
+            name="lastName"
             value={lastName}
             handleChange={(e) => setLastName(e.target.value)}
           />
           <FormRow
-            type='email'
-            name='email'
+            type="email"
+            name="email"
             value={email}
             handleChange={(e) => setEmail(e.target.value)}
           />
 
           <FormRow
-            type='text'
-            name='location'
+            type="text"
+            name="location"
             value={location}
             handleChange={(e) => setLocation(e.target.value)}
           />
-          <button className='btn btn-block' type='submit' disabled={isLoading}>
+          <button className="btn btn-block" type="submit" disabled={isLoading}>
             {isLoading ? 'Please Wait...' : 'save changes'}
           </button>
         </div>
@@ -2917,8 +2917,8 @@ const updaterUser = async (currentUser) => {
   try {
     const { data } = await axios.patch('/api/v1/auth/updateUser', currentUser, {
       headers: {
-        Authorization: `Bearer ${state.token}`,
-      },
+        Authorization: `Bearer ${state.token}`
+      }
     })
     console.log(data)
   } catch (error) {
@@ -2943,8 +2943,8 @@ AppContext.js
 const authFetch = axios.create({
   baseURL: '/api/v1',
   headers: {
-    Authorization: `Bearer ${state.token}`,
-  },
+    Authorization: `Bearer ${state.token}`
+  }
 })
 
 const updaterUser = async (currentUser) => {
@@ -3010,14 +3010,14 @@ const updateUser = async (currentUser) => {
 
     dispatch({
       type: UPDATE_USER_SUCCESS,
-      payload: { user, location, token },
+      payload: { user, location, token }
     })
 
     addUserToLocalStorage({ user, location, token })
   } catch (error) {
     dispatch({
       type: UPDATE_USER_ERROR,
-      payload: { msg: error.response.data.msg },
+      payload: { msg: error.response.data.msg }
     })
   }
   clearAlert()
@@ -3081,7 +3081,7 @@ const updateUser = async (currentUser) => {
 
     dispatch({
       type: UPDATE_USER_SUCCESS,
-      payload: { user, location, token },
+      payload: { user, location, token }
     })
 
     addUserToLocalStorage({ user, location, token: initialState.token })
@@ -3089,7 +3089,7 @@ const updateUser = async (currentUser) => {
     if (error.response.status !== 401) {
       dispatch({
         type: UPDATE_USER_ERROR,
-        payload: { msg: error.response.data.msg },
+        payload: { msg: error.response.data.msg }
       })
     }
   }
@@ -3111,34 +3111,34 @@ const JobSchema = new mongoose.Schema(
     company: {
       type: String,
       required: [true, 'Please provide company name'],
-      maxlength: 50,
+      maxlength: 50
     },
     position: {
       type: String,
       required: [true, 'Please provide position'],
-      maxlength: 100,
+      maxlength: 100
     },
     status: {
       type: String,
       enum: ['interview', 'declined', 'pending'],
-      default: 'pending',
+      default: 'pending'
     },
 
     jobType: {
       type: String,
       enum: ['full-time', 'part-time', 'remote', 'internship'],
-      default: 'full-time',
+      default: 'full-time'
     },
     jobLocation: {
       type: String,
       default: 'my city',
-      required: true,
+      required: true
     },
     createdBy: {
       type: mongoose.Types.ObjectId,
       ref: 'User',
-      required: [true, 'Please provide user'],
-    },
+      required: [true, 'Please provide user']
+    }
   },
   { timestamps: true }
 )
@@ -3182,7 +3182,7 @@ const initialState = {
   jobTypeOptions: ['full-time', 'part-time', 'remote', 'internship'],
   jobType: 'full-time',
   statusOptions: ['pending', 'interview', 'declined'],
-  status: 'pending',
+  status: 'pending'
 }
 ```
 
@@ -3203,7 +3203,7 @@ const AddJob = () => {
     jobType,
     jobTypeOptions,
     status,
-    statusOptions,
+    statusOptions
   } = useAppContext()
 
   const handleSubmit = (e) => {
@@ -3224,30 +3224,30 @@ const AddJob = () => {
 
   return (
     <Wrapper>
-      <form className='form'>
+      <form className="form">
         <h3>{isEditing ? 'edit job' : 'add job'} </h3>
         {showAlert && <Alert />}
 
         {/* position */}
-        <div className='form-center'>
+        <div className="form-center">
           <FormRow
-            type='text'
-            name='position'
+            type="text"
+            name="position"
             value={position}
             handleChange={handleJobInput}
           />
           {/* company */}
           <FormRow
-            type='text'
-            name='company'
+            type="text"
+            name="company"
             value={company}
             handleChange={handleJobInput}
           />
           {/* location */}
           <FormRow
-            type='text'
-            labelText='location'
-            name='jobLocation'
+            type="text"
+            labelText="location"
+            name="jobLocation"
             value={jobLocation}
             handleChange={handleJobInput}
           />
@@ -3255,10 +3255,10 @@ const AddJob = () => {
 
           {/* job status */}
 
-          <div className='btn-container'>
+          <div className="btn-container">
             <button
-              className='btn btn-block submit-btn'
-              type='submit'
+              className="btn btn-block submit-btn"
+              type="submit"
               onClick={handleSubmit}
             >
               submit
@@ -3278,16 +3278,16 @@ export default AddJob
 ```js
 return (
   // job type
-  <div className='form-row'>
-    <label htmlFor='jobType' className='form-label'>
+  <div className="form-row">
+    <label htmlFor="jobType" className="form-label">
       job type
     </label>
 
     <select
-      name='jobType'
+      name="jobType"
       value={jobType}
       onChange={handleJobInput}
-      className='form-select'
+      className="form-select"
     >
       {jobTypeOptions.map((itemValue, index) => {
         return (
@@ -3309,8 +3309,8 @@ return (
 ```js
 const FormRowSelect = ({ labelText, name, value, handleChange, list }) => {
   return (
-    <div className='form-row'>
-      <label htmlFor={name} className='form-label'>
+    <div className="form-row">
+      <label htmlFor={name} className="form-label">
         {labelText || name}
       </label>
 
@@ -3318,7 +3318,7 @@ const FormRowSelect = ({ labelText, name, value, handleChange, list }) => {
         name={name}
         value={value}
         onChange={handleChange}
-        className='form-select'
+        className="form-select"
       >
         {list.map((itemValue, index) => {
           return (
@@ -3343,7 +3343,7 @@ return (
     {/* job status */}
 
     <FormRowSelect
-      name='status'
+      name="status"
       value={status}
       handleChange={handleJobInput}
       list={statusOptions}
@@ -3351,8 +3351,8 @@ return (
 
     {/* job type */}
     <FormRowSelect
-      labelText='type'
-      name='jobType'
+      labelText="type"
+      name="jobType"
       value={jobType}
       handleChange={handleJobInput}
       list={jobTypeOptions}
@@ -3431,7 +3431,7 @@ if (action.type === CLEAR_VALUES) {
     company: '',
     jobLocation: state.userLocation,
     jobType: 'full-time',
-    status: 'pending',
+    status: 'pending'
   }
   return { ...state, ...initialState }
 }
@@ -3443,11 +3443,11 @@ AddJob.js
 const { clearValues } = useAppContext()
 
 return (
-  <div className='btn-container'>
+  <div className="btn-container">
     {/* submit button */}
 
     <button
-      className='btn btn-block clear-btn'
+      className="btn btn-block clear-btn"
       onClick={(e) => {
         e.preventDefault()
         clearValues()
@@ -3482,10 +3482,10 @@ const createJob = async () => {
       position,
       jobLocation,
       jobType,
-      status,
+      status
     })
     dispatch({
-      type: CREATE_JOB_SUCCESS,
+      type: CREATE_JOB_SUCCESS
     })
     // call function instead clearValues()
     dispatch({ type: CLEAR_VALUES })
@@ -3493,7 +3493,7 @@ const createJob = async () => {
     if (error.response.status === 401) return
     dispatch({
       type: CREATE_JOB_ERROR,
-      payload: { msg: error.response.data.msg },
+      payload: { msg: error.response.data.msg }
     })
   }
   clearAlert()
@@ -3533,7 +3533,7 @@ if (action.type === CREATE_JOB_SUCCESS) {
     isLoading: false,
     showAlert: true,
     alertType: 'success',
-    alertText: 'New Job Created!',
+    alertText: 'New Job Created!'
   }
 }
 if (action.type === CREATE_JOB_ERROR) {
@@ -3542,7 +3542,7 @@ if (action.type === CREATE_JOB_ERROR) {
     isLoading: false,
     showAlert: true,
     alertType: 'danger',
-    alertText: action.payload.msg,
+    alertText: action.payload.msg
   }
 }
 ```
@@ -3570,7 +3570,7 @@ const initialState = {
   jobs: [],
   totalJobs: 0,
   numOfPages: 1,
-  page: 1,
+  page: 1
 }
 ```
 
@@ -3629,7 +3629,7 @@ if (action.type === GET_JOBS_SUCCESS) {
     isLoading: false,
     jobs: action.payload.jobs,
     totalJobs: action.payload.totalJobs,
-    numOfPages: action.payload.numOfPages,
+    numOfPages: action.payload.numOfPages
   }
 }
 ```
@@ -3687,7 +3687,7 @@ const JobsContainer = () => {
       <h5>
         {totalJobs} job{jobs.length > 1 && 's'} found
       </h5>
-      <div className='jobs'>
+      <div className="jobs">
         {jobs.map((job) => {
           return <Job key={job._id} {...job} />
         })}
@@ -3773,7 +3773,7 @@ const Job = ({
   jobLocation,
   jobType,
   createdAt,
-  status,
+  status
 }) => {
   const { setEditJob, deleteJob } = useAppContext()
 
@@ -3783,26 +3783,26 @@ const Job = ({
   return (
     <Wrapper>
       <header>
-        <div className='main-icon'>{company.charAt(0)}</div>
-        <div className='info'>
+        <div className="main-icon">{company.charAt(0)}</div>
+        <div className="info">
           <h5>{position}</h5>
           <p>{company}</p>
         </div>
       </header>
-      <div className='content'>
+      <div className="content">
         {/* content center later */}
         <footer>
-          <div className='actions'>
+          <div className="actions">
             <Link
-              to='/add-job'
+              to="/add-job"
               onClick={() => setEditJob(_id)}
-              className='btn edit-btn'
+              className="btn edit-btn"
             >
               Edit
             </Link>
             <button
-              type='button'
-              className='btn delete-btn'
+              type="button"
+              className="btn delete-btn"
               onClick={() => deleteJob(_id)}
             >
               Delete
@@ -3827,8 +3827,8 @@ import Wrapper from '../assets/wrappers/JobInfo'
 const JobInfo = ({ icon, text }) => {
   return (
     <Wrapper>
-      <span className='icon'>{icon}</span>
-      <span className='text'>{text}</span>
+      <span className="icon">{icon}</span>
+      <span className="text">{text}</span>
     </Wrapper>
   )
 }
@@ -3839,8 +3839,8 @@ export default JobInfo
 ```js
 Job.js
 return (
-  <div className='content'>
-    <div className='content-center'>
+  <div className="content">
+    <div className="content-center">
       <JobInfo icon={<FaLocationArrow />} text={jobLocation} />
       <JobInfo icon={<FaCalendarAlt />} text={date} />
       <JobInfo icon={<FaBriefcase />} text={jobType} />
@@ -3884,7 +3884,7 @@ if (action.type === SET_EDIT_JOB) {
     company,
     jobLocation,
     jobType,
-    status,
+    status
   }
 }
 ```
@@ -3931,7 +3931,7 @@ const updateJob = async (req, res) => {
 
   const updatedJob = await Job.findOneAndUpdate({ _id: jobId }, req.body, {
     new: true,
-    runValidators: true,
+    runValidators: true
   })
 
   res.status(StatusCodes.OK).json({ updatedJob })
@@ -4002,7 +4002,7 @@ const updateJob = async (req, res) => {
 
   const updatedJob = await Job.findOneAndUpdate({ _id: jobId }, req.body, {
     new: true,
-    runValidators: true,
+    runValidators: true
   })
 
   res.status(StatusCodes.OK).json({ updatedJob })
@@ -4099,17 +4099,17 @@ const editJob = async () => {
       position,
       jobLocation,
       jobType,
-      status,
+      status
     })
     dispatch({
-      type: EDIT_JOB_SUCCESS,
+      type: EDIT_JOB_SUCCESS
     })
     dispatch({ type: CLEAR_VALUES })
   } catch (error) {
     if (error.response.status === 401) return
     dispatch({
       type: EDIT_JOB_ERROR,
-      payload: { msg: error.response.data.msg },
+      payload: { msg: error.response.data.msg }
     })
   }
   clearAlert()
@@ -4128,7 +4128,7 @@ if (action.type === EDIT_JOB_SUCCESS) {
     isLoading: false,
     showAlert: true,
     alertType: 'success',
-    alertText: 'Job Updated!',
+    alertText: 'Job Updated!'
   }
 }
 if (action.type === EDIT_JOB_ERROR) {
@@ -4137,7 +4137,7 @@ if (action.type === EDIT_JOB_ERROR) {
     isLoading: false,
     showAlert: true,
     alertType: 'danger',
-    alertText: action.payload.msg,
+    alertText: action.payload.msg
   }
 }
 ```
@@ -4168,7 +4168,7 @@ const start = async () => {
     await Job.deleteMany()
 
     const jsonProducts = JSON.parse(
-      await readFile(new URL('./mock-data.json', import.meta.url))
+      await readFile(new URL('./mock-data.json'), import.meta.url)
     )
     await Job.create(jsonProducts)
     console.log('Success!!!!')
@@ -4196,7 +4196,7 @@ import mongoose from 'mongoose'
 const showStats = async (req, res) => {
   let stats = await Job.aggregate([
     { $match: { createdBy: mongoose.Types.ObjectId(req.user.userId) } },
-    { $group: { _id: '$status', count: { $sum: 1 } } },
+    { $group: { _id: '$status', count: { $sum: 1 } } }
   ])
 
   res.status(StatusCodes.OK).json({ stats })
@@ -4214,7 +4214,7 @@ jobsController.js
 const showStats = async (req, res) => {
   let stats = await Job.aggregate([
     { $match: { createdBy: mongoose.Types.ObjectId(req.user.userId) } },
-    { $group: { _id: '$status', count: { $sum: 1 } } },
+    { $group: { _id: '$status', count: { $sum: 1 } } }
   ])
 
   stats = stats.reduce((acc, curr) => {
@@ -4235,7 +4235,7 @@ jobsController.js
 const showStats = async (req, res) => {
   let stats = await Job.aggregate([
     { $match: { createdBy: mongoose.Types.ObjectId(req.user.userId) } },
-    { $group: { _id: '$status', count: { $sum: 1 } } },
+    { $group: { _id: '$status', count: { $sum: 1 } } }
   ])
   stats = stats.reduce((acc, curr) => {
     const { _id: title, count } = curr
@@ -4246,7 +4246,7 @@ const showStats = async (req, res) => {
   const defaultStats = {
     pending: stats.pending || 0,
     interview: stats.interview || 0,
-    declined: stats.declined || 0,
+    declined: stats.declined || 0
   }
   let monthlyApplications = []
   res.status(StatusCodes.OK).json({ defaultStats, monthlyApplications })
@@ -4302,7 +4302,7 @@ if (action.type === SHOW_STATS_SUCCESS) {
     ...state,
     isLoading: false,
     stats: action.payload.stats,
-    monthlyApplications: action.payload.monthlyApplications,
+    monthlyApplications: action.payload.monthlyApplications
   }
 }
 ```
@@ -4361,22 +4361,22 @@ const StatsContainer = () => {
       count: stats.pending || 0,
       icon: <FaSuitcaseRolling />,
       color: '#e9b949',
-      bcg: '#fcefc7',
+      bcg: '#fcefc7'
     },
     {
       title: 'interviews scheduled',
       count: stats.interview || 0,
       icon: <FaCalendarCheck />,
       color: '#647acb',
-      bcg: '#e0e8f9',
+      bcg: '#e0e8f9'
     },
     {
       title: 'jobs declined',
       count: stats.declined || 0,
       icon: <FaBug />,
       color: '#d66a6a',
-      bcg: '#ffeeee',
-    },
+      bcg: '#ffeeee'
+    }
   ]
 
   return (
@@ -4402,10 +4402,10 @@ function StatItem({ count, title, icon, color, bcg }) {
   return (
     <Wrapper color={color} bcg={bcg}>
       <header>
-        <span className='count'>{count}</span>
-        <div className='icon'>{icon}</div>
+        <span className="count">{count}</span>
+        <div className="icon">{icon}</div>
       </header>
-      <h5 className='title'>{title}</h5>
+      <h5 className="title">{title}</h5>
     </Wrapper>
   )
 }
@@ -4424,17 +4424,17 @@ let monthlyApplications = await Job.aggregate([
     $group: {
       _id: {
         year: {
-          $year: '$createdAt',
+          $year: '$createdAt'
         },
         month: {
-          $month: '$createdAt',
-        },
+          $month: '$createdAt'
+        }
       },
-      count: { $sum: 1 },
-    },
+      count: { $sum: 1 }
+    }
   },
   { $sort: { '_id.year': -1, '_id.month': -1 } },
-  { $limit: 6 },
+  { $limit: 6 }
 ])
 ```
 
@@ -4456,7 +4456,7 @@ monthlyApplications = monthlyApplications
   .map((item) => {
     const {
       _id: { year, month },
-      count,
+      count
     } = item
     // accepts 0-11
     const date = moment()
@@ -4490,7 +4490,7 @@ export default function ChartsContainer() {
     <Wrapper>
       <h4>Monthly Applications</h4>
 
-      <button type='button' onClick={() => setBarChart(!barChart)}>
+      <button type="button" onClick={() => setBarChart(!barChart)}>
         {barChart ? 'AreaChart' : 'BarChart'}
       </button>
       {barChart ? <BarChart data={data} /> : <AreaChart data={data} />}
@@ -4521,23 +4521,23 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
+  ResponsiveContainer
 } from 'recharts'
 
 const BarChartComponent = ({ data }) => {
   return (
-    <ResponsiveContainer width='100%' height={300}>
+    <ResponsiveContainer width="100%" height={300}>
       <BarChart
         data={data}
         margin={{
-          top: 50,
+          top: 50
         }}
       >
-        <CartesianGrid strokeDasharray='3 3' />
-        <XAxis dataKey='date' />
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="date" />
         <YAxis allowDecimals={false} />
         <Tooltip />
-        <Bar dataKey='count' fill='#2cb1bc' barSize={75} />
+        <Bar dataKey="count" fill="#2cb1bc" barSize={75} />
       </BarChart>
     </ResponsiveContainer>
   )
@@ -4554,23 +4554,23 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
+  Tooltip
 } from 'recharts'
 
 const AreaChartComponent = ({ data }) => {
   return (
-    <ResponsiveContainer width='100%' height={300}>
+    <ResponsiveContainer width="100%" height={300}>
       <AreaChart
         data={data}
         margin={{
-          top: 50,
+          top: 50
         }}
       >
-        <CartesianGrid strokeDasharray='3 3' />
-        <XAxis dataKey='date' />
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="date" />
         <YAxis allowDecimals={false} />
         <Tooltip />
-        <Area type='monotone' dataKey='count' stroke='#2cb1bc' fill='#bef8fd' />
+        <Area type="monotone" dataKey="count" stroke="#2cb1bc" fill="#bef8fd" />
       </AreaChart>
     </ResponsiveContainer>
   )
@@ -4588,7 +4588,7 @@ const getAllJobs = async (req, res) => {
   const { search, status, jobType, sort } = req.query
 
   const queryObject = {
-    createdBy: req.user.userId,
+    createdBy: req.user.userId
   }
 
   // NO AWAIT
@@ -4613,7 +4613,7 @@ const getAllJobs = async (req, res) => {
   const { search, status, jobType, sort } = req.query
 
   const queryObject = {
-    createdBy: req.user.userId,
+    createdBy: req.user.userId
   }
 
   if (status !== 'all') {
@@ -4642,7 +4642,7 @@ const getAllJobs = async (req, res) => {
   const { search, status, jobType, sort } = req.query
 
   const queryObject = {
-    createdBy: req.user.userId,
+    createdBy: req.user.userId
   }
 
   if (status !== 'all') {
@@ -4673,7 +4673,7 @@ const getAllJobs = async (req, res) => {
   const { search, status, jobType, sort } = req.query
 
   const queryObject = {
-    createdBy: req.user.userId,
+    createdBy: req.user.userId
   }
 
   if (status !== 'all') {
@@ -4764,7 +4764,7 @@ const SearchContainer = () => {
     statusOptions,
     jobTypeOptions,
     handleChange,
-    clearFilters,
+    clearFilters
   } = useAppContext()
 
   const handleSearch = (e) => {
@@ -4774,13 +4774,13 @@ const SearchContainer = () => {
 
   return (
     <Wrapper>
-      <form className='form'>
+      <form className="form">
         <h4>search form</h4>
         {/* search position */}
-        <div className='form-center'>
+        <div className="form-center">
           <FormRow
-            type='text'
-            name='search'
+            type="text"
+            name="search"
             value={search}
             handleChange={handleSearch}
           ></FormRow>
@@ -4814,7 +4814,7 @@ const SearchContainer = () => {
     searchType,
     clearFilters,
     sort,
-    sortOptions,
+    sortOptions
   } = useAppContext()
 
   const handleSearch = (e) => {
@@ -4827,20 +4827,20 @@ const SearchContainer = () => {
   }
   return (
     <Wrapper>
-      <form className='form'>
+      <form className="form">
         <h4>search form</h4>
         {/* search position */}
-        <div className='form-center'>
+        <div className="form-center">
           <FormRow
-            type='text'
-            name='search'
+            type="text"
+            name="search"
             value={search}
             handleChange={handleSearch}
           ></FormRow>
           {/* search by status */}
           <FormRowSelect
-            labelText='job status'
-            name='searchStatus'
+            labelText="job status"
+            name="searchStatus"
             value={searchStatus}
             handleChange={handleSearch}
             list={['all', ...statusOptions]}
@@ -4848,8 +4848,8 @@ const SearchContainer = () => {
           {/* search by type */}
 
           <FormRowSelect
-            labelText='job type'
-            name='searchType'
+            labelText="job type"
+            name="searchType"
             value={searchType}
             handleChange={handleSearch}
             list={['all', ...jobTypeOptions]}
@@ -4857,13 +4857,13 @@ const SearchContainer = () => {
           {/* sort */}
 
           <FormRowSelect
-            name='sort'
+            name="sort"
             value={sort}
             handleChange={handleSearch}
             list={sortOptions}
           ></FormRowSelect>
           <button
-            className='btn btn-block btn-danger'
+            className="btn btn-block btn-danger"
             disabled={isLoading}
             onClick={handleSubmit}
           >
@@ -4903,7 +4903,7 @@ if (action.type === CLEAR_FILTERS) {
     search: '',
     searchStatus: 'all',
     searchType: 'all',
-    sort: 'latest',
+    sort: 'latest'
   }
 }
 ```
@@ -4927,8 +4927,8 @@ const getJobs = async () => {
       payload: {
         jobs,
         totalJobs,
-        numOfPages,
-      },
+        numOfPages
+      }
     })
   } catch (error) {
     // logoutUser()
@@ -4967,7 +4967,7 @@ jobsController.js
 const getAllJobs = async (req, res) => {
   const { search, status, jobType, sort } = req.query
   const queryObject = {
-    createdBy: req.user.userId,
+    createdBy: req.user.userId
   }
   if (search) {
     queryObject.position = { $regex: search, $options: 'i' }
@@ -5017,7 +5017,7 @@ jobsController.js
 const getAllJobs = async (req, res) => {
   const { search, status, jobType, sort } = req.query
   const queryObject = {
-    createdBy: req.user.userId,
+    createdBy: req.user.userId
   }
   if (search) {
     queryObject.position = { $regex: search, $options: 'i' }
@@ -5065,7 +5065,7 @@ jobsController.js
 const getAllJobs = async (req, res) => {
   const { search, status, jobType, sort } = req.query
   const queryObject = {
-    createdBy: req.user.userId,
+    createdBy: req.user.userId
   }
   if (search) {
     queryObject.position = { $regex: search, $options: 'i' }
@@ -5123,7 +5123,7 @@ return (
     <h5>
       {totalJobs} job{jobs.length > 1 && 's'} found
     </h5>
-    <div className='jobs'>
+    <div className="jobs">
       {jobs.map((job) => {
         return <Job key={job._id} {...job} />
       })}
@@ -5154,14 +5154,14 @@ const PageButtonContainer = () => {
 
   return (
     <Wrapper>
-      <button className='prev-btn' onClick={prevPage}>
+      <button className="prev-btn" onClick={prevPage}>
         <HiChevronDoubleLeft />
         prev
       </button>
 
-      <div className='btn-container'>buttons</div>
+      <div className="btn-container">buttons</div>
 
-      <button className='next-btn' onClick={nextPage}>
+      <button className="next-btn" onClick={nextPage}>
         next
         <HiChevronDoubleRight />
       </button>
@@ -5184,11 +5184,11 @@ const pages = Array.from({ length: numOfPages }, (_, index) => {
 })
 
 return (
-  <div className='btn-container'>
+  <div className="btn-container">
     {pages.map((pageNumber) => {
       return (
         <button
-          type='button'
+          type="button"
           className={pageNumber === page ? 'pageBtn active' : 'pageBtn'}
           key={pageNumber}
           onClick={() => console.log(page)}
@@ -5230,7 +5230,7 @@ PageBtnContainer.js
 const { changePage } = useAppContext()
 return (
   <button
-    type='button'
+    type="button"
     className={pageNumber === page ? 'pageBtn active' : 'pageBtn'}
     key={pageNumber}
     onClick={() => changePage(pageNumber)}
@@ -5382,7 +5382,7 @@ import rateLimiter from 'express-rate-limit'
 const apiLimiter = rateLimiter({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 10,
-  message: 'Too many requests from this IP, please try again after 15 minutes',
+  message: 'Too many requests from this IP, please try again after 15 minutes'
 })
 
 router.route('/register').post(apiLimiter, register)
