@@ -4,6 +4,7 @@ import { BadRequestError, NotFoundError } from '../errors/index.js'
 import checkPermissions from '../utils/checkPermissions.js'
 import mongoose from 'mongoose'
 import moment from 'moment'
+import { query } from 'express'
 
 const createJob = async (req, res) => {
   const { position, company } = req.body
@@ -17,11 +18,46 @@ const createJob = async (req, res) => {
 }
 
 const getAllJobs = async (req, res) => {
-  const jobs = await Job.find({ createdBy: req.user.userId })
+  const { status, jobType, sort, search } = req.query
+
+  const queryObject = {
+    createdBy: req.user.userId
+  }
+  // ADD QUERY TINGS CONDITIONALLY
+  if (status !== 'all') {
+    queryObject.status = status
+  }
+
+  if (jobType !== 'all') {
+    queryObject.jobType = jobType
+  }
+
+  if (search) {
+    queryObject.position = { $regex: search, $options: 'i' }
+  }
+
+  // NO AWAIT
+  let result = Job.find(queryObject)
+
+  // CHAIN SORT CONDITIONS
+  if (sort === 'latest') {
+    result = result.sort('-createdAt')
+  }
+  if (sort === 'oldest') {
+    result = result.sort('createdAt')
+  }
+  if (sort === 'a-z') {
+    result = result.sort('position')
+  }
+  if (sort === 'z-a') {
+    result = result.sort('-position')
+  }
+
+  const jobs = await result
 
   res
     .status(StatusCodes.OK)
-    .json({ jobs, totalJobs: jobs.length, numOfPages: 1 })
+    .json({ totalJobs: jobs.length, jobs, numOfPages: 1 })
 }
 
 const updateJob = async (req, res) => {
